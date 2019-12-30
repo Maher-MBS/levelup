@@ -1,12 +1,12 @@
 import React from 'react'
 import Letter from './Letter'
 
-const Mask = ({word, validLetters}) => (
+const Mask = ({won, word, validLetters}) => (
 
     <div className="mask">
         {
             generateArray(word, validLetters).map((element) => (
-                <Letter key={element[0]} character={element[1]} status={element[2]} />
+                <Letter won={won} key={element[0]} character={element[1]} status={element[2]} />
             )
         )}
     </div>

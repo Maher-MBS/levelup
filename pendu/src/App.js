@@ -66,13 +66,13 @@ class App extends Component {
   render () {
     return(
     <div className="pendu">
-      <Mask word={this.state.currentWord} validLetters={this.state.validLetters} />
+      <Mask won={this.state.won} word={this.state.currentWord} validLetters={this.state.validLetters} />
       
       {!this.state.won && <Keyboard validLetters={this.state.validLetters} unvalidLetters={this.state.unvalidLetters} handleChoice={this.handleChoice} />}
       {this.state.won && 
       (<div className="text-center">
         <div>
-          <img src={gj} alt="Good Job!"/>
+          <img className="goodjob" src={gj} alt="Good Job!"/>
         </div>
         <div className="again">
           <button className="btn btn-warning" onClick={this.resetState}>Play Again !</button>
